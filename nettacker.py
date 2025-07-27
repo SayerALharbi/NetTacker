@@ -33,7 +33,54 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 init()
 
 def show_logo():
-    logo = f'''{Fore.GREEN}
+    # تحقق من وجود ملفات اللوقو
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    svg_file = os.path.join(current_dir, 'logo.svg')
+    html_file = os.path.join(current_dir, 'logo.html')
+    
+    if os.path.exists(svg_file) and os.path.exists(html_file):
+        # عرض رسالة عن اللوقو الجديد مع خيار فتح الملف HTML
+        print(f"{Fore.CYAN}{Style.BRIGHT}")
+        print("╔" + "═" * 70 + "╗")
+        print("║" + " " * 70 + "║")
+        print("║" + "  NETTACKER - أداة فحص الشبكات المتقدمة  ".center(70) + "║")
+        print("║" + " " * 70 + "║")
+        print("║" + "  تم إضافة لوقو مميز جديد!  ".center(70) + "║")
+        print("║" + " " * 70 + "║")
+        print("║" + "  لعرض اللوقو بشكل تفاعلي، يمكنك فتح الملف التالي في المتصفح:  ".center(70) + "║")
+        print("║" + " " * 70 + "║")
+        print("║" + f"  {html_file}  ".center(70) + "║")
+        print("║" + " " * 70 + "║")
+        print("║" + "  هل ترغب في فتح اللوقو الآن؟ (y/n)  ".center(70) + "║")
+        print("║" + " " * 70 + "║")
+        print("╚" + "═" * 70 + "╝")
+        
+        # انتظار رد المستخدم
+        try:
+            choice = input(f"{Fore.YELLOW}اختيارك: {Style.RESET_ALL}")
+            if choice.lower() == 'y':
+                # فتح ملف HTML في المتصفح الافتراضي
+                try:
+                    if sys.platform.startswith('win'):
+                        os.startfile(html_file)
+                    elif sys.platform.startswith('darwin'):  # macOS
+                        subprocess.call(['open', html_file])
+                    else:  # Linux
+                        subprocess.call(['xdg-open', html_file])
+                    print(f"{Fore.GREEN}تم فتح اللوقو في المتصفح!{Style.RESET_ALL}")
+                except Exception as e:
+                    print(f"{Fore.RED}حدث خطأ أثناء محاولة فتح الملف: {e}{Style.RESET_ALL}")
+                    print(f"{Fore.YELLOW}يمكنك فتح الملف يدوياً: {html_file}{Style.RESET_ALL}")
+        except KeyboardInterrupt:
+            print(f"\n{Fore.YELLOW}تم إلغاء العملية.{Style.RESET_ALL}")
+        
+        # عرض معلومات إضافية
+        print(f"\n{Fore.CYAN}{Style.BRIGHT}Version 1.0.0")
+        print(f"Developed by SayerLinux (SaudiSayer@gmail.com)")
+        print(f"OWASP Nettacker Clone{Style.RESET_ALL}\n")
+    else:
+        # عرض اللوقو النصي القديم إذا لم يتم العثور على ملفات اللوقو
+        logo = f'''{Fore.GREEN}
     _   _      _   _             _
    | \ | | ___| |_| |_ __ _  ___| | _____ _ __
    |  \| |/ _ \ __| __/ _` |/ __| |/ / _ \ '__|
@@ -44,7 +91,7 @@ def show_logo():
     Developed by SayerLinux (SaudiSayer@gmail.com)
     OWASP Nettacker Clone{Style.RESET_ALL}
     '''
-    print(logo)
+        print(logo)
 
 def port_scan(host, port):
     try:
@@ -618,6 +665,12 @@ def parse_args():
     parser.add_argument('-v', '--verbose',
                         action='store_true',
                         help='عرض تفاصيل إضافية')
+    parser.add_argument('--no-logo',
+                        action='store_true',
+                        help='تعطيل عرض اللوقو عند بدء البرنامج')
+    parser.add_argument('--show-logo-only',
+                        action='store_true',
+                        help='عرض اللوقو فقط ثم الخروج من البرنامج')
     parser.add_argument('-t', '--timeout',
                         type=float,
                         default=3,
@@ -725,8 +778,15 @@ def save_results(filename, results, args):
         f.write("تم إنشاء هذا التقرير بواسطة Nettacker\n")
 
 def main():
-    show_logo()
     args = parse_args()
+    
+    # التحقق من خيارات اللوقو
+    if not args.no_logo:
+        show_logo()
+    
+    # إذا كان الخيار هو عرض اللوقو فقط، نخرج من البرنامج
+    if args.show_logo_only:
+        sys.exit(0)
     
     if len(sys.argv) == 1:
         print(f"\n{Fore.RED}خطأ: لم يتم تحديد أي معاملات. استخدم -h أو --help للمساعدة.{Style.RESET_ALL}")

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nettacker - لوقو</title>
+    <style>
+        body {
+            background-color: #0f0f1a;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #1a1a2e;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+        }
+        h1 {
+            color: #e94560;
+            margin-bottom: 30px;
+        }
+        .logo-container {
+            margin: 20px auto;
+            max-width: 800px;
+            transition: transform 0.5s ease;
+        }
+        .logo-container:hover {
+            transform: scale(1.05);
+        }
+        .info {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #16213e;
+            border-radius: 8px;
+            text-align: right;
+        }
+        .feature-list {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .feature-item {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #0f3460;
+            border-radius: 5px;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(233, 69, 96, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(233, 69, 96, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(233, 69, 96, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nettacker - أداة فحص الشبكات المتقدمة</h1>
+        
+        <div class="logo-container pulse">
+            <object data="logo.svg" type="image/svg+xml" width="100%"></object>
+        </div>
+        
+        <div class="info">
+            <h2>عن الأداة</h2>
+            <p>Nettacker هي أداة متقدمة لفحص الشبكات وكشف الثغرات الأمنية. تم تطويرها لمساعدة مختبري الاختراق ومسؤولي أمن المعلومات في تقييم أمان الشبكات والخوادم.</p>
+        </div>
+        
+        <div class="feature-list">
+            <h2>المميزات الرئيسية</h2>
+            <div class="feature-item">فحص المنافذ المفتوحة</div>
+            <div class="feature-item">كشف الخدمات والإصدارات</div>
+            <div class="feature-item">فحص المسارات والملفات المخفية</div>
+            <div class="feature-item">فحص شامل للمسارات باستخدام Gobuster (قوة مدمرة جداً في اكتشاف المسارات والملفات المخفية)</div>
+            <div class="feature-item">كشف الثغرات الأمنية</div>
+            <div class="feature-item">إنشاء تقارير مفصلة</div>
+        </div>
+        
+        <div class="footer">
+            <p>Version 1.0.0</p>
+            <p>Developed by SayerLinux (SaudiSayer@gmail.com)</p>
+            <p>OWASP Nettacker Clone</p>
+        </div>
+    </div>
+</body>
+</html>
