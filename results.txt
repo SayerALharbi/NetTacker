@@ -1,0 +1,125 @@
+﻿تقرير فحص Nettacker - 2025-07-27 14:29:06.598444
+==================================================
+
+معلومات الفحص:
+الهدف: example.com
+نوع الفحص: all
+المنافذ المفحوصة: 80,443
+
+==================================================
+
+المنافذ المفتوحة:
+- منفذ مفتوح: 80 - الخدمة: http
+- منفذ مفتوح: 443 - الخدمة: https
+
+الخدمات المكتشفة:
+- خادم الويب: غير معروف
+- خادم الويب: غير معروف
+
+الثغرات المحتملة:
+- ثغرة XSS محتملة في http://example.com
+- ثغرة CSRF محتملة في http://example.com/login
+- ثغرة SQL Injection محتملة في https://example.com/search
+- ثغرة CSRF محتملة في https://example.com/login
+- ثغرة Command Injection محتملة في https://example.com/admin
+- ثغرة Information Disclosure محتملة في https://example.com/about
+
+نتائج فحص dirsearch:
+- مسار تم اكتشافه (dirsearch): http://example.com/admin (تحويل مؤقت, 42933 bytes) - خطورة عالية
+- مسار تم اكتشافه (dirsearch): http://example.com/phpmyadmin (تحويل دائم, 16186 bytes) - خطورة عالية
+- مسار تم اكتشافه (dirsearch): http://example.com/panel (تحويل مؤقت, 18731 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (dirsearch): http://example.com/webadmin (تحويل دائم, 25909 bytes) - خطورة عالية
+- مسار تم اكتشافه (dirsearch): http://example.com/accounts (ممنوع الوصول, 38704 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (dirsearch): http://example.com/config.yml (ممنوع الوصول, 5367 bytes) - خطورة عالية
+- مسار تم اكتشافه (dirsearch): http://example.com/sitemap.xml (تحويل دائم, 9178 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (dirsearch): http://example.com/server-status (تحويل دائم, 47733 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (dirsearch): http://example.com/media (ممنوع الوصول, 32343 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (dirsearch): https://example.com/phpmyadmin (متاح للوصول, 13448 bytes) - خطورة عالية
+- مسار تم اكتشافه (dirsearch): https://example.com/webadmin (متاح للوصول, 33234 bytes) - خطورة عالية
+- مسار تم اكتشافه (dirsearch): https://example.com/login (متاح للوصول, 35365 bytes) - خطورة عالية
+- مسار تم اكتشافه (dirsearch): https://example.com/user (متاح للوصول, 2332 bytes) - خطورة عالية
+- مسار تم اكتشافه (dirsearch): https://example.com/users (ممنوع الوصول, 30995 bytes) - خطورة عالية
+- مسار تم اكتشافه (dirsearch): https://example.com/wp-login.php (تحويل مؤقت, 19827 bytes) - خطورة عالية
+- مسار تم اكتشافه (dirsearch): https://example.com/web.config (متاح للوصول, 36312 bytes) - خطورة عالية
+- مسار تم اكتشافه (dirsearch): https://example.com/.htaccess (تحويل مؤقت, 40507 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (dirsearch): https://example.com/wp-config.php (متاح للوصول, 38331 bytes) - خطورة عالية
+- مسار تم اكتشافه (dirsearch): https://example.com/sitemap.xml (متاح للوصول, 7861 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (dirsearch): https://example.com/server-status (متاح للوصول, 17000 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (dirsearch): https://example.com/.well-known (تحويل مؤقت, 9640 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (dirsearch): https://example.com/upload (تحويل دائم, 25751 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (dirsearch): https://example.com/js (تحويل دائم, 24898 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (dirsearch): https://example.com/javascript (ممنوع الوصول, 41422 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (dirsearch): https://example.com/img (تحويل مؤقت, 12900 bytes) - خطورة منخفضة
+
+نتائج فحص Gobuster (القوة المدمرة):
+- مسار تم اكتشافه (Gobuster): http://example.com/login (متاح للوصول, 86260 bytes) - خطورة عالية
+- مسار تم اكتشافه (Gobuster): http://example.com/admin/login (غير مصرح به, 70179 bytes) - خطورة عالية
+- مسار تم اكتشافه (Gobuster): http://example.com/administrator/index.php (متاح للوصول, 29559 bytes) - خطورة عالية
+- مسار تم اكتشافه (Gobuster): http://example.com/admin/account.php (متاح للوصول, 77569 bytes) - خطورة عالية
+- مسار تم اكتشافه (Gobuster): http://example.com/.env (ممنوع الوصول, 48637 bytes) - خطورة عالية
+- مسار تم اكتشافه (Gobuster): http://example.com/.well-known (ممنوع الوصول, 16339 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): http://example.com/config/database.yml (غير مصرح به, 6572 bytes) - خطورة عالية
+- مسار تم اكتشافه (Gobuster): http://example.com/db (تحويل دائم, 37658 bytes) - خطورة عالية
+- مسار تم اكتشافه (Gobuster): http://example.com/backup.tgz (متاح للوصول, 11448 bytes) - خطورة عالية
+- مسار تم اكتشافه (Gobuster): http://example.com/db.tgz (تحويل مؤقت, 41814 bytes) - خطورة عالية
+- مسار تم اكتشافه (Gobuster): http://example.com/db.7z (متاح للوصول, 37715 bytes) - خطورة عالية
+- مسار تم اكتشافه (Gobuster): http://example.com/test (تحويل دائم, 65607 bytes) - خطورة متوسطة
+- مسار تم اكتشافه (Gobuster): http://example.com/phpinfo.php (ممنوع الوصول, 94807 bytes) - خطورة متوسطة
+- مسار تم اكتشافه (Gobuster): http://example.com/test.php (ممنوع الوصول, 83518 bytes) - خطورة متوسطة
+- مسار تم اكتشافه (Gobuster): http://example.com/staging.php (ممنوع الوصول, 37010 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): http://example.com/swagger (تحويل دائم, 59959 bytes) - خطورة متوسطة
+- مسار تم اكتشافه (Gobuster): http://example.com/docs (متاح للوصول, 92276 bytes) - خطورة متوسطة
+- مسار تم اكتشافه (Gobuster): http://example.com/documentation (تحويل دائم, 18626 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): http://example.com/api/swagger (متاح للوصول, 83317 bytes) - خطورة متوسطة
+- مسار تم اكتشافه (Gobuster): http://example.com/graphiql (تحويل مؤقت, 14674 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): http://example.com/images (تحويل دائم, 81825 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): http://example.com/files (تحويل دائم, 68440 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): http://example.com/upload (متاح للوصول, 3619 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): http://example.com/assets (متاح للوصول, 23921 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): http://example.com/css (متاح للوصول, 55132 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): http://example.com/javascript (متاح للوصول, 92578 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): http://example.com/img (متاح للوصول, 56911 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): http://example.com/plugins (تحويل دائم, 88081 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): http://example.com/attachments (متاح للوصول, 85849 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): http://example.com/documents (تحويل دائم, 62791 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): http://example.com/data (متاح للوصول, 32921 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): http://example.com/wkjrbupdla (تحويل دائم, 24483 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): http://example.com/jpewnpib (ممنوع الوصول, 52367 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): http://example.com/bublwh (ممنوع الوصول, 4787 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): http://example.com/qkqjn (تحويل دائم, 77691 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): http://example.com/ziffbi (متاح للوصول, 40443 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): http://example.com/grgtk (غير مصرح به, 41501 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): http://example.com/msyz (متاح للوصول, 37034 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): http://example.com/pvufhpdd (تحويل مؤقت, 12690 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): http://example.com/tnpx (متاح للوصول, 61702 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): https://example.com/login (متاح للوصول, 77732 bytes) - خطورة عالية
+- مسار تم اكتشافه (Gobuster): https://example.com/user (متاح للوصول, 32272 bytes) - خطورة عالية
+- مسار تم اكتشافه (Gobuster): https://example.com/accounts (متاح للوصول, 54178 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): https://example.com/admin/login.php (تحويل دائم, 18707 bytes) - خطورة عالية
+- مسار تم اكتشافه (Gobuster): https://example.com/.env (تحويل مؤقت, 89308 bytes) - خطورة عالية
+- مسار تم اكتشافه (Gobuster): https://example.com/web.config (متاح للوصول, 78500 bytes) - خطورة عالية
+- مسار تم اكتشافه (Gobuster): https://example.com/.htaccess (تحويل مؤقت, 31745 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): https://example.com/wp-config.php (متاح للوصول, 72194 bytes) - خطورة عالية
+- مسار تم اكتشافه (Gobuster): https://example.com/sitemap.xml (تحويل دائم, 59252 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): https://example.com/.well-known (تحويل مؤقت, 62287 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): https://example.com/.DS_Store (متاح للوصول, 83514 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): https://example.com/backup.7z (متاح للوصول, 8165 bytes) - خطورة عالية
+- مسار تم اكتشافه (Gobuster): https://example.com/staging (متاح للوصول, 33465 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): https://example.com/info.php (متاح للوصول, 68997 bytes) - خطورة متوسطة
+- مسار تم اكتشافه (Gobuster): https://example.com/dev/index.php (ممنوع الوصول, 77333 bytes) - خطورة متوسطة
+- مسار تم اكتشافه (Gobuster): https://example.com/api/v1 (متاح للوصول, 93971 bytes) - خطورة متوسطة
+- مسار تم اكتشافه (Gobuster): https://example.com/docs (تحويل دائم, 72274 bytes) - خطورة متوسطة
+- مسار تم اكتشافه (Gobuster): https://example.com/api-docs (متاح للوصول, 48043 bytes) - خطورة متوسطة
+- مسار تم اكتشافه (Gobuster): https://example.com/api/documentation (متاح للوصول, 21268 bytes) - خطورة متوسطة
+- مسار تم اكتشافه (Gobuster): https://example.com/private (ممنوع الوصول, 41775 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): https://example.com/upload (تحويل دائم, 45174 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): https://example.com/javascript (تحويل دائم, 98784 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): https://example.com/img (تحويل مؤقت, 38573 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): https://example.com/plugins (تحويل دائم, 34842 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): https://example.com/rnxgujy (تحويل دائم, 14852 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): https://example.com/wttywnsgca (ممنوع الوصول, 79048 bytes) - خطورة منخفضة
+- مسار تم اكتشافه (Gobuster): https://example.com/reagxnjvt (غير مصرح به, 28326 bytes) - خطورة منخفضة
+
+
+==================================================
+تم إنشاء هذا التقرير بواسطة Nettacker
